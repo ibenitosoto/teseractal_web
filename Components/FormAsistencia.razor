@@ -1,0 +1,73 @@
+﻿@using Boda_BlazorWASM_PowerAutomate.Models;
+@using Boda_BlazorWASM_PowerAutomate.Components;
+@using System.ComponentModel.DataAnnotations
+
+
+<MudPaper Class="mt-2 mx-7 mb-7 pa-4" Elevation="10">
+    <MudForm Model="@model" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+        <MudTextField T="string" Label="Nombre" @bind-Value="model.Name" Required="true" RequiredError="Por favor rellena el nombre" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
+        <MudTextField T="string" Label="Apellido" @bind-Value="model.LastName" Required="true" RequiredError="Por favor rellena el apellido" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
+        <MudTextField T="string" Label="Email" @bind-Value="model.Email" Required="true" RequiredError="Por favor rellena el email" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Email" AdornmentColor="Color.Primary"
+                      Validation="@(new EmailAddressAttribute() {ErrorMessage = "La dirección de email es inválida"})" />
+
+
+        <MudSelect @bind-Value="model.SpecialMenu" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Intolerancias - Menú especial" MultiSelection="true" @bind-SelectedValues="opcionesMenu" AdornmentIcon="@Icons.Material.Filled.Fastfood" AdornmentColor="Color.Primary">
+            @foreach (var intolerancia in intolerancias)
+            {
+                <MudSelectItem T="string" Value="@intolerancia">@intolerancia</MudSelectItem>
+            }
+        </MudSelect>
+
+        <MudSelect @bind-Value="model.Buses" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Autobuses" MultiSelection="true" @bind-SelectedValues="opcionesBus" AdornmentIcon="@Icons.Material.Filled.DirectionsBus" AdornmentColor="Color.Primary">
+            @foreach (var bus in buses)
+            {
+                <MudSelectItem T="string" Value="@bus">@bus</MudSelectItem>
+            }
+        </MudSelect>
+
+        <div class="d-flex align-center justify-center mt-8">
+            <MudButton @onclick="Submit" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success)">ENVIAR</MudButton>
+        </div>
+
+    </MudForm>
+</MudPaper>
+
+@code {
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm form;
+
+    private AttendeeModel model = new AttendeeModel();
+
+
+    private string valueMenu { get; set; } = "Nada seleccionado";
+    private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
+
+    private string[] intolerancias =
+      {
+        "Nada", "Lactosa", "Gluten", "Marisco", "Menú vegetariano", "Menú vegano", "Otros"
+    };
+
+    private string valueBus { get; set; } = "Nada seleccionado";
+    private IEnumerable<string> opcionesBus { get; set; } = new HashSet<string>();
+    private string[] buses =
+      {
+        "Ninguno",
+        "14:30 Campanario (Ceremonia) - Quinto Cecilio (Banquete)",
+        "01:00 Quinto Cecilio (Banquete) - Medellín",
+        "01:00 Quinto Cecilio (Banquete) - Campanario",
+    };
+
+    private async void Submit()
+    {
+        await SaveToDynamoDB();
+    }
+
+    private async Task SaveToDynamoDB()
+    {
+        model.AttendeeID = Guid.NewGuid().ToString();
+
+        // Optionally handle success/failure and show a message to the user
+    }
+}
