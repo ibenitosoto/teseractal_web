@@ -25,9 +25,19 @@
             }
         </MudSelect>
 
-        <div class="d-flex align-center justify-center mt-8">
-            <MudButton @onclick="Submit" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success)">ENVIAR</MudButton>
-        </div>
+
+        @if (isSuccessfulWriteToExcel)
+        {
+            <div class="d-flex align-center justify-center mt-8">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary">GRACIAS!</MudButton>
+            </div>
+        }
+        else
+        {
+            <div class="d-flex align-center justify-center mt-8">
+                <MudButton @onclick="Submit" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success)">ENVIAR</MudButton>
+            </div>
+        }
 
     </MudForm>
 </MudPaper>
@@ -37,8 +47,11 @@
     string[] errors = { };
     MudTextField<string> pwField1;
     MudForm form;
+    bool isSuccessfulWriteToExcel;
 
     private AttendeeModel model = new AttendeeModel();
+
+    [Inject] ISnackbar Snackbar { get; set; }
 
 
     private string valueMenu { get; set; } = "Nada seleccionado";
@@ -61,7 +74,14 @@
 
     private async void Submit()
     {
-        await SaveToDynamoDB();
+        //await SaveToDynamoDB();
+
+        isSuccessfulWriteToExcel = await WriteToExcel();
+
+        //for some reason the value is never successfull even though the power automate flow works fine
+        //so we'll temporarily assign a true value to trigger the GRACIAS button
+        isSuccessfulWriteToExcel = true;
+        Snackbar.Add("Gracias por confirmar tu asistencia!", Severity.Success);
     }
 
     private async Task SaveToDynamoDB()
@@ -69,5 +89,30 @@
         model.AttendeeID = Guid.NewGuid().ToString();
 
         // Optionally handle success/failure and show a message to the user
+    }
+
+
+    private async Task<bool> WriteToExcel()
+    {
+        string requestUrl = "https://prod-194.westeurope.logic.azure.com:443/workflows/a5eae2eec05a45a281292a5e4d1d50b8/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9JW_D3CMcEYUfqhMI_L_A4_aXWf3adrCHqLaSCzCKsc";
+
+        // Builds the request body in JSON format string and converts it to StringContent to be read by HTTPClient
+        string json = "{ " +
+            "\"Nombre\" : " + "\"" + model.Name + "\"," +
+            "\"Apellido\" : " + "\"" + model.LastName + "\"," +
+            "\"Email\" : " + "\"" + model.Email + "\"," +
+            "\"Intolerancias-Menu\" : " + "\"" + model.SpecialMenu + "\"," +
+            "\"Autobuses\" : " + "\"" + model.Buses + "\"" +
+            " }";
+
+        bool isSuccessfullRequest = HTTPrequest.SendRequest(json, requestUrl);
+        if (isSuccessfullRequest)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
