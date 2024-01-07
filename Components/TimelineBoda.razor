@@ -1,81 +1,94 @@
 ﻿
 @inject MyMudTheme theme;
 
-<MudTimeline Style="@($"background-color:{theme.Palette.TertiaryLighten};")">
+<MudTimeline TimelineAlign="TimelineAlign.Start" TimelinePosition="TimelinePosition.Start" Style="@($"background-color:{theme.Palette.TertiaryLighten};")">
     <MudContainer>
-        <MudTimelineItem Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.Church" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Secondary" Typo="Typo.h5">13:00</MudText>
             </ItemOpposite>
             <ItemContent>
+                <MudText Color="Color.Secondary" Typo="Typo.h5">13:00</MudText>
                 <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Ceremonia</MudText>
                 <MudText>Parroquia Ntra. Sra. de la Asunción de Campanario - Pl. Carmen, s/n, 06460 Campanario, Badajoz</MudText>
             </ItemContent>
         </MudTimelineItem>
 
-        <MudTimelineItem Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.DirectionsBus" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">14:30</MudText>
             </ItemOpposite>
             <ItemContent>
+                <MudText Color="Color.Primary" Typo="Typo.h5">14:30</MudText>
                 <MudText Class="hellovalentica" Color="Color.Primary" Typo="Typo.h3" GutterBottom="true">Autobuses ida</MudText>
                 <MudText>Los autobuses saldrán hacia el lugar del banquete. Se podrán coger en Pl. Carmen, s/n, 06460 Campanario, Badajoz</MudText>
             </ItemContent>
         </MudTimelineItem>
 
-        <MudTimelineItem Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Secondary" Typo="Typo.h5">15:00</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Restaurante El Quinto Cecilio</MudText>
+                <MudText Color="Color.Secondary" Typo="Typo.h5">15:00</MudText>
+                <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Coctel</MudText>
                 <MudText>Urbanización Quinto Cecilio Parcela 105, 06411 Medellín, Badajoz</MudText>
             </ItemContent>
         </MudTimelineItem>
 
-        <MudTimelineItem Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
+            <ItemDot>
+                <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large"></MudIcon>
+            </ItemDot>
+            <ItemOpposite>
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Secondary" Typo="Typo.h5">16:00</MudText>
+                <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Comida</MudText>
+                <MudText>Urbanización Quinto Cecilio Parcela 105, 06411 Medellín, Badajoz</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+
+        <MudTimelineItem Elevation="4" Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.Piano" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">18:00</MudText>
             </ItemOpposite>
             <ItemContent>
+                <MudText Color="Color.Primary" Typo="Typo.h5">18:00</MudText>
                 <MudText Class="hellovalentica" Color="Color.Primary" Typo="Typo.h3" GutterBottom="true">Grupo en directo</MudText>
                 <MudText>Terraza Quinto Cecilio. Urbanización Quinto Cecilio Parcela 105, 06411 Medellín, Badajoz</MudText>
             </ItemContent>
         </MudTimelineItem>
 
-        <MudTimelineItem Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Secondary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.Nightlife" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Secondary" Typo="Typo.h5">19:00</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Restaurante El Quinto Cecilio</MudText>
+                <MudText Color="Color.Secondary" Typo="Typo.h5">19:00</MudText>
+                <MudText Class="hellovalentica" Color="Color.Secondary" Typo="Typo.h3" GutterBottom="true">Barra libre</MudText>
                 <MudText>Urbanización Quinto Cecilio Parcela 105, 06411 Medellín, Badajoz</MudText>
             </ItemContent>
         </MudTimelineItem>
 
-        <MudTimelineItem Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
+        <MudTimelineItem Elevation="4" Color="Color.Primary" Size="Size.Large" Variant="Variant.Filled">
             <ItemDot>
                 <MudIcon Icon="@Icons.Material.Filled.DirectionsBus" Size="Size.Large"></MudIcon>
             </ItemDot>
             <ItemOpposite>
-                <MudText Color="Color.Primary" Typo="Typo.h5">01:00</MudText>
             </ItemOpposite>
             <ItemContent>
+                <MudText Color="Color.Primary" Typo="Typo.h5">01:00</MudText>
                 <MudText Class="hellovalentica" Color="Color.Primary" Typo="Typo.h3" GutterBottom="true">Autobuses vuelta</MudText>
                 <MudText>Los autobuses saldrán hacia Medellín y Campanario. Se podrán coger en la entrada del Restaurante Quinto Cecilio</MudText>
             </ItemContent>

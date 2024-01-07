@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/asistencia"
 <link rel="stylesheet" href="/css/custom-fonts.css" />
 
 
@@ -8,64 +8,11 @@
 
 <PageTitle>Boda MIsabel & Nacho</PageTitle>
 
-@* <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
- *@
-
-@*  <div class="d-flex justify-center">
-    <MudImage ObjectFit="ObjectFit.Cover" Height="200" Width="400" Src=".\images\fotoMaizal.jpg" Alt="Foto maizal" Class="rounded-lg" />
-</div> *@
-
-<div class="flex-container">
-
-    <div class="foto1">
-        <MudContainer Class="text-overlay flex-column align-center justify-center mud-width-full">
-
-            <MudText Class="saturday" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h3">¡Nos casamos!</MudText>
-
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">María</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Isabel</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">y</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Nacho</MudText>
-
-            <MudText Class="butterfly" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h3">20 de abril de 2024</MudText>
-        </MudContainer>
-
-    </div>
-
-</div>
-
 <MudGrid>
-    <MudItem xs="12">
-        <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 saturday" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¡Nos casamos!</MudText>
-
-            <MudText Class="mt-7 pa-2 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">María</MudText>
-            <MudText Class="mt-7 pa-2 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">Isabel</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">y</MudText>
-            <MudText Class="ma-10 pa-2 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">Nacho</MudText>
-
-            <MudText Class="ma-4 butterfly" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">20 de abril de 2024</MudText>
-            <MudText Class="mt-8 saturday" Align="Align.Center" Color="Color.Tertiary" Typo="Typo.h4">Ceremonia: Campanario, Badajoz</MudText>
-            <MudText Class="saturday" Align="Align.Center" Color="Color.Tertiary" Typo="Typo.h4">Banquete: Medellín, Badajoz</MudText>
-        </MudContainer>
-
-   @*      <div class="d-flex align-center justify-center mt-8">
-            <MudDatePicker PickerVariant="PickerVariant.Static" @ref="_picker" @bind-Date="date" Class="d-flex align-content-center" />
-        </div>
-
-        <div class="d-flex align-center justify-center mt-n4 gap-8">
-            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="Today">Fecha Hoy</MudButton>
-            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="WeddingDate">Fecha Boda</MudButton>
-        </div> *@
-    </MudItem>
-
-    <MudItem Class="mt-5" xs="12">
-        <TimelineBoda></TimelineBoda>
-    </MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 adelia" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+            <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
         </MudContainer>
 
         <div class="d-flex align-center justify-center mt-15">
@@ -76,10 +23,10 @@
     @if (IsAttendanceConfirmed)
     {
         <MudItem Class="mt-2" xs="12">
-            <MudText Class="mt-10 butterfly" Color="Color.Primary" Align="Align.Center" Typo="Typo.h1">¡Genial!</MudText>
-            <MudText Class="mt-10 southland" Color="Color.Primary" Align="Align.Center" Typo="Typo.h1">Danos algunos datos para confirmar tu asistencia</MudText>
+            <MudText Class="mt-10 butterfly" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
+            <MudText Class="mt-10 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">Danos algunos datos para confirmar tu asistencia</MudText>
 
-            <div class="d-flex align-center justify-center">
+            <div class="d-flex mt-8 align-center justify-center">
                 <MudRadioGroup T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
                     <MudRadio Option="@("Option1")">Voy SIN acompañante</MudRadio>
                     <MudRadio Option="@("Option2")">Voy CON acompañante</MudRadio>
@@ -102,9 +49,7 @@
         </MudItem>
     }
 
-    <MudItem Class="mt-5" xs="12">
-        <TimelineBoda></TimelineBoda>
-    </MudItem>
+
 
 </MudGrid>
 
@@ -189,27 +134,6 @@
     }
 
 
-    // protected override void OnAfterRender(bool firstRender)
-    // {
-    //     if (firstRender)
-    //     {
-    //         _picker.GoToDate(weddingDate);
-    //         date = weddingDate;
-    //     }
-    // }
-
-    // private async Task Today()
-    // {
-    //     await _picker.GoToDate(DateTime.Today);
-    //     date = DateTime.Today;
-    // }
-
-    // private async Task WeddingDate()
-    // {
-    //     await _picker.GoToDate(weddingDate);
-    //     date = weddingDate;
-    // }
-
     private string valueMenu { get; set; } = "Nada seleccionado";
     private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
 
@@ -223,7 +147,7 @@
     private string[] buses =
       {
         "Ninguno",
-        "14:30 Campanario (Ceremonia) - Quinto Cecilio (Banquete)", 
+        "14:30 Campanario (Ceremonia) - Quinto Cecilio (Banquete)",
         "01:00 Quinto Cecilio (Banquete) - Medellín",
         "01:00 Quinto Cecilio (Banquete) - Campanario",
     };

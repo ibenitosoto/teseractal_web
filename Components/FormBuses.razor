@@ -11,10 +11,10 @@
                       Validation="@(new EmailAddressAttribute() {ErrorMessage = "La dirección de email es inválida"})" />
 
 
-        <MudSelect @bind-Value="model.SpecialMenu" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Intolerancias - Menú especial" MultiSelection="true" @bind-SelectedValues="opcionesMenu" AdornmentIcon="@Icons.Material.Filled.Fastfood" AdornmentColor="Color.Primary">
-            @foreach (var intolerancia in intolerancias)
+        <MudSelect @bind-Value="model.Buses" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Autobuses" MultiSelection="true" @bind-SelectedValues="opcionesBus" AdornmentIcon="@Icons.Material.Filled.DirectionsBus" AdornmentColor="Color.Primary">
+            @foreach (var bus in buses)
             {
-                <MudSelectItem T="string" Value="@intolerancia">@intolerancia</MudSelectItem>
+                <MudSelectItem T="string" Value="@bus">@bus</MudSelectItem>
             }
         </MudSelect>
 
@@ -50,9 +50,13 @@
     private string valueMenu { get; set; } = "Nada seleccionado";
     private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
 
-    private string[] intolerancias =
-      {
-        "Nada", "Lactosa", "Gluten", "Marisco", "Menú vegetariano", "Menú vegano", "Otros"
+    private string[] buses =
+    {
+        "Ninguno",
+        "12:00 Medellín - 12:45 Campanario (Parque)",
+        "12:30 Albergue - 12:45 Campanario (Parque)",
+        "14:30 Campanario (Parque) - Quinto Cecilio (Banquete)",
+        "Vuelta",
     };
 
     private string valueBus { get; set; } = "Nada seleccionado";
