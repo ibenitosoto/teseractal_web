@@ -9,48 +9,30 @@
 <PageTitle>Boda MIsabel & Nacho</PageTitle>
 
 <MudGrid>
+    <MudItem Class="mt-2" xs="12">
+        <MudText Class="mt-10 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">Danos algunos datos para confirmar tu asistencia</MudText>
 
-    <MudItem xs="12">
-        <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
-        </MudContainer>
-
-        <div class="d-flex align-center justify-center mt-15">
-            <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Tertiary">CONFIRMO</MudButton>
+        <div class="d-flex mt-8 align-center justify-center">
+            <MudRadioGroup T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
+                <MudRadio Option="@("Option1")">Voy SIN acompañante</MudRadio>
+                <MudRadio Option="@("Option2")">Voy CON acompañante</MudRadio>
+            </MudRadioGroup>
         </div>
+
+        @if (SelectedOptionAcompañante == "Option1")
+        {
+            <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
+            <FormAsistencia></FormAsistencia>
+        }
+        else if (SelectedOptionAcompañante == "Option2")
+        {
+            <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
+            <FormAsistencia></FormAsistencia>
+            <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">datos de tu acompañante</MudText>
+            <FormAsistencia></FormAsistencia>
+        }
+
     </MudItem>
-
-    @if (IsAttendanceConfirmed)
-    {
-        <MudItem Class="mt-2" xs="12">
-            <MudText Class="mt-10 butterfly" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
-            <MudText Class="mt-10 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">Danos algunos datos para confirmar tu asistencia</MudText>
-
-            <div class="d-flex mt-8 align-center justify-center">
-                <MudRadioGroup T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
-                    <MudRadio Option="@("Option1")">Voy SIN acompañante</MudRadio>
-                    <MudRadio Option="@("Option2")">Voy CON acompañante</MudRadio>
-                </MudRadioGroup>
-            </div>
-
-            @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
-            {
-                <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
-                <FormAsistencia></FormAsistencia>
-            }
-            else if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option2")
-            {
-                <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
-                <FormAsistencia></FormAsistencia>
-                <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">datos de tu acompañante</MudText>
-                <FormAsistencia></FormAsistencia>
-            }
-
-        </MudItem>
-    }
-
-
-
 </MudGrid>
 
 
