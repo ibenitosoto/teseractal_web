@@ -1,0 +1,120 @@
+﻿@page "/horarios"
+<link rel="stylesheet" href="/css/custom-fonts.css" />
+
+
+@using Boda_BlazorWASM_PowerAutomate.Components;
+@using Boda_BlazorWASM_PowerAutomate.Models;
+@using System.ComponentModel.DataAnnotations
+
+<MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">Horarios</MudText>
+
+
+<MudGrid>
+    <MudItem Class="mt-5" xs="12">
+        <TimelineBoda></TimelineBoda>
+    </MudItem>
+</MudGrid>
+
+
+
+
+<style>
+    .flex-container div {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .foto1 {
+        /* background-color: var(--color1); */
+        background-image: url('images/fotoMaizal2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+        .foto1::before {
+            content: "";
+            background-color: rgba(255, 255, 255, 0.85); /* Adjust the opacity as needed */
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+
+    .foto2 {
+        /* background-color: var(--color1); */
+        /* background-image: url('images/fotoSantiago2.jpg'); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+@code {
+    bool success;
+    string[] errors = { };
+    MudTextField<string> pwField1;
+    MudForm form;
+
+    public bool IsAttendanceConfirmed { get; set; } = false;
+    public string SelectedOptionAcompañante { get; set; }
+
+    MudDatePicker _picker;
+    DateTime? date;
+    DateTime weddingDate = new System.DateTime(2024, 04, 20);
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+
+    private void ConfirmAttendance()
+    {
+        IsAttendanceConfirmed = true;
+    }
+
+
+    private string valueMenu { get; set; } = "Nada seleccionado";
+    private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
+
+    private string[] intolerancias =
+      {
+        "Nada", "Lactosa", "Gluten", "Marisco", "Menú vegetariano", "Menú vegano", "Otros"
+    };
+
+    private string valueBus { get; set; } = "Nada seleccionado";
+    private IEnumerable<string> opcionesBus { get; set; } = new HashSet<string>();
+    private string[] buses =
+      {
+        "Ninguno",
+        "14:30 Campanario (Ceremonia) - Quinto Cecilio (Banquete)",
+        "01:00 Quinto Cecilio (Banquete) - Medellín",
+        "01:00 Quinto Cecilio (Banquete) - Campanario",
+    };
+
+
+}
+
+
