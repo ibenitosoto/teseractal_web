@@ -1,0 +1,74 @@
+﻿@page "/alojamientos"
+<link rel="stylesheet" href="/css/custom-fonts.css" />
+
+
+@using Boda_BlazorWASM_PowerAutomate.Components;
+@using Boda_BlazorWASM_PowerAutomate.Models;
+@using System.ComponentModel.DataAnnotations
+
+
+<MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">Alojamientos</MudText>
+
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Hotel rural Quinto Cecilio (donde comeremos el día de la boda):</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 80€/noche habitacion doble "classic" o "superior" (12 habitaciones disponibles)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 95€/noche habitaciones doble "privilege" (2 habitaciones disponibles)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">(Todas las dobles tienen posibilidad de añadir dos camas supletorias por 25€ más cada cama)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 150€/noche los apartamentos para 4 personas. (5 apartamentos disponibles)</MudText>
+    <MudText Typo="Typo.caption" Class="dayroman">*Incluye alojamiento y desayuno</MudText>
+    <MudLink Href="https://www.quintocecilio.com/hotel-rural" Target="_blank">Ver fotos e info aquí</MudLink>
+    <MudLink Href="https://www.quintocecilio.com/apartamentos-rurales" Target="_blank">Ver fotos e info aquí</MudLink>
+</MudPaper>
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Hotel Vegas Altas (Don Benito)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Esta a 10 minutos en coche del restaurante.</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Es un hotel de 4 estrellas que esta bastante bien.</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 79€/noche habitación doble. (77 hab. disponibles)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 65€/noche habitacion individual. (Es igual que la doble, pero hacen precio si se queda una sola persona).</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 120€/noche la suite. (3 hab. disponibles)</MudText>
+    <MudText Typo="Typo.caption" Class="dayroman">*Incluye alojamiento y desayuno</MudText>
+    <MudText Typo="Typo.caption" Class="dayroman">*Se puede reservar solo alojamiento la individual por 60€/noche y la doble por 71€/noche.</MudText>
+    <MudLink Href="https://www.hotelvegasaltas.com/habitaciones.html" Target="_blank">Ver fotos e info aquí</MudLink>
+</MudPaper>
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Hostal La Cabaña (Medellin)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Este es un hostal, menos bueno que los otros dos, pero es bastante nuevo (desde 2020) y con muy buenas reseñas sobre limpieza y comodidad de las camas.</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Esta en Medellin pueblo, a 7min en coche del restaurante, y los precios son mas bajos:</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 60€/noche habitacion doble vistas al castillo (1 hab disponible)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 50€/noche habitacion doble (8 habitaciones disponibles)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- 30€/noche habitacion individual (1 habitacion disponible)</MudText>
+    <MudText Typo="Typo.caption" Class="dayroman">*Incluye alojamiento y desayuno</MudText>
+    <MudLink Href="https://lacabanahostal.com/" Target="_blank">Ver fotos e info aquí</MudLink>
+</MudPaper>
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Hostal Rio (Medellin)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Similares caracteristicas al anterior. 5 min en coche desde el restaurante.</MudText>
+    <MudLink Href="https://hostalrio.es/nuestras-instalaciones/" Target="_blank">Ver fotos e info aquí (aunque si quereis reservar, creo que a traves de "booking" sale mas barato) Preguntadnos si teneis dudas.</MudLink>
+</MudPaper>
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Hotel Tierra (Don Benito)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">16 habitaciones dobles, a elegir:</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- Habitación uso IN. 35€</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- Habitación uso DB. 50€</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- Habitación uso TRIPLE. 70€.</MudText>
+    <MudLink Href="https://www.restauraciontierraboyal.com/index.php/hotel" Target="_blank">Ver foto e info aquí</MudLink>
+</MudPaper>
+
+<MudPaper Elevation="2" Class="ma-6 pa-4">
+    <MudText Typo="Typo.h4" Class="saturday mb-3" Color="Color.Primary">Albergue La estacion (Campanario)</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Es como una casa grande con varias habitaciones. En la planta baja hay un salón, y varias habitaciones con baño propio.</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Y en la planta alta hay varias habitaciones con terraza, y una zona de baños (estos serían compartidos).</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">Seria ideal para un mismo grupo de amigos o familiares, pero tambien se alquila por habitaciones individualmente.</MudText>
+    <MudText Typo="Typo.body2" Class="dayroman">- Precios desde 25€/noche con desayuno incluido.</MudText>
+    <MudLink Href="https://alberguelaestacioncampanario.com/albergue/" Target="_blank">Ver fotos e info aquí</MudLink>
+</MudPaper>
+
+
+@code {
+
+}
