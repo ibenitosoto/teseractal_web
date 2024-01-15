@@ -1,0 +1,80 @@
+﻿@page "/turismo"
+<link rel="stylesheet" href="/css/custom-fonts.css" />
+
+
+@using Boda_BlazorWASM_PowerAutomate.Components;
+@using Boda_BlazorWASM_PowerAutomate.Models;
+@using System.ComponentModel.DataAnnotations
+
+<MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">Turismo</MudText>
+
+<MudGrid Class="ma-6" Spacing="4">
+    <MudItem>
+        <MudCard Class="custom-card" Elevation="6">
+            <MudCardMedia Image="images/castillo.jpg" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Castillo de Medellín</MudText>
+                <MudText Typo="Typo.body2">Fortaleza del siglo XIII, ubicado en un elevado cerro en la margen izquierda del río Guadiana</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Href="https://maps.app.goo.gl/M1xCuJMB41RwhZ798"
+                           Target="_blank" Variant="Variant.Text" Color="Color.Primary">MAPA</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem>
+        <MudCard Class="custom-card" Elevation="6">
+            <MudCardMedia Image="images/teatro.jpg" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Teatro romano de Medellín</MudText>
+                <MudText Typo="Typo.body2">Es el más importante edificio visible del Metellinum romano, situado en la ladera meridional del cerro.</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Href="https://maps.app.goo.gl/uVBc7C3VMEp1yRq29"
+                           Target="_blank" Variant="Variant.Text" Color="Color.Primary">MAPA</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem>
+        <MudCard Class="custom-card" Elevation="6">
+            <MudCardMedia Image="images/iglesia.jpg" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Centro Museográfico</MudText>
+                <MudText Typo="Typo.body2">Iglesia restaurada para darle utilidad como centro de interpretación del Parque Arqueológico de Medellín.</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Href="https://maps.app.goo.gl/uhXySwmfu8kLm3iA6"
+                           Target="_blank" Variant="Variant.Text" Color="Color.Primary">MAPA</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <MudItem>
+        <MudCard Class="custom-card" Elevation="6">
+            <MudCardMedia Image="images/magacela.jpg" Height="200" />
+            <MudCardContent>
+                <MudText Typo="Typo.h5">Castillo de Magacela</MudText>
+                <MudText Typo="Typo.body2">Levantado en la cima alargada de una escarpada colina pétrea que emerge aislada en las llanuras de La Serena</MudText>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton Href="https://maps.app.goo.gl/KYMh3e32Fj1URCLh9"
+                           Target="_blank" Variant="Variant.Text" Color="Color.Primary">MAPA</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+</MudGrid>
+
+<style>
+    .custom-card {
+        max-width: 400px;
+        min-width: 300px;
+        /* Add any other styling as needed */
+    }
+</style>
+
+@code {
+
+}
