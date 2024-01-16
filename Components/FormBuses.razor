@@ -7,16 +7,19 @@
     <MudForm Model="@model" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
         <MudTextField T="string" Label="Nombre" @bind-Value="model.Name" Required="true" RequiredError="Por favor rellena el nombre" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
         <MudTextField T="string" Label="Apellido" @bind-Value="model.LastName" Required="true" RequiredError="Por favor rellena el apellido" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
-        <MudTextField T="string" Label="Email" @bind-Value="model.Email" Required="true" RequiredError="Por favor rellena el email" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Email" AdornmentColor="Color.Primary"
-                      Validation="@(new EmailAddressAttribute() {ErrorMessage = "La dirección de email es inválida"})" />
 
+        <MudTextField T="string" Label="Nombre acompañante (si aplica) " @bind-Value="model.NameAcompanante" Required="true" RequiredError="Por favor rellena el nombre" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
+        <MudTextField T="string" Label="Apellido acompañante (si aplica) " @bind-Value="model.LastNameAcompanante" Required="true" RequiredError="Por favor rellena el apellido" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
 
-        <MudSelect @bind-Value="model.Buses" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Autobuses" MultiSelection="true" @bind-SelectedValues="opcionesBus" AdornmentIcon="@Icons.Material.Filled.DirectionsBus" AdornmentColor="Color.Primary">
+ @*        <MudSelect @bind-Value="model.Buses" Required="true" RequiredError="Por favor selecciona una opción" Class="mt-2" T="string" Label="Autobuses" MultiSelection="true" @bind-SelectedValues="opcionesBus" AdornmentIcon="@Icons.Material.Filled.DirectionsBus" AdornmentColor="Color.Primary">
             @foreach (var bus in buses)
             {
                 <MudSelectItem T="string" Value="@bus">@bus</MudSelectItem>
             }
-        </MudSelect>
+        </MudSelect> *@
+
+        <MudCheckBox Class="mt-6" @bind-Value="@Label_CheckBox1" Label="Bus Iglesia (Campanario) a Restaurante (Medellín)" Color="Color.Dark"></MudCheckBox>
+        <MudCheckBox Class="mt-4" @bind-Value="@Label_CheckBox2" Label="Bus Restaurante (Medellín) a Iglesia (Campanario)" Color="Color.Dark"></MudCheckBox>
 
 
         @if (isSuccessfulWriteToExcel)
@@ -35,6 +38,9 @@
     </MudForm>
 </MudPaper>
 
+
+
+
 @code {
     bool success;
     string[] errors = { };
@@ -45,10 +51,11 @@
     private AttendeeModel model = new AttendeeModel();
 
     [Inject] ISnackbar Snackbar { get; set; }
-
-
     private string valueMenu { get; set; } = "Nada seleccionado";
     private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
+
+    public bool Label_CheckBox1 { get; set; } = false;
+    public bool Label_CheckBox2 { get; set; } = false;
 
     private string[] buses =
     {

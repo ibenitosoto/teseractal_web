@@ -13,6 +13,8 @@
         public string SpecialMenu { get; set; }
 
         public string Buses { get; set; }
+        public string NameAcompanante { get; set; }
+        public string LastNameAcompanante { get; set; }
     }
 
 }
