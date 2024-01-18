@@ -1,4 +1,5 @@
 ﻿using MudBlazor;
+using MudBlazor.Utilities;
 
 namespace Boda_BlazorWASM_PowerAutomate.Components
 {
@@ -8,15 +9,15 @@ namespace Boda_BlazorWASM_PowerAutomate.Components
         {
             Palette = new Palette()
             {
-                Primary = Colors.LightGreen.Lighten1,
-                Secondary = Colors.LightGreen.Darken1,
-                Tertiary = Colors.LightGreen.Lighten3,
-                Dark = Colors.LightGreen.Darken3,
-                DarkDarken = Colors.LightGreen.Darken4,
-                DarkLighten = Colors.LightGreen.Darken2,
-                PrimaryLighten = Colors.LightGreen.Lighten1,
+                Primary = new MudColor("BFD09A"),
+                Secondary = new MudColor("B3CEC3"),
+                Tertiary = new MudColor("808285"),
+                Dark = Colors.Shades.Black,
+                DarkDarken = Colors.Shades.Black,
+                DarkLighten = Colors.Shades.Black,
+                PrimaryLighten = Colors.Shades.Black,
 
-                AppbarBackground = Colors.LightGreen.Lighten1,
+                AppbarBackground = new MudColor("BFD09A"),
 
             };
         }

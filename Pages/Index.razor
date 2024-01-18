@@ -20,14 +20,15 @@
     <div class="foto1">
         <MudContainer Class="text-overlay flex-column align-center justify-center mud-width-full">
 
-            <MudText Class="saturday" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h3">¡Nos casamos!</MudText>
 
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">María</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Isabel</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">y</MudText>
-            <MudText Class="pa-2 adelia" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Nacho</MudText>
+            <MudText Class="pa-2 bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h1">M. Isabel</MudText>
+            <MudText Class="pa-2 bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h1">y</MudText>
+            <MudText Class="pa-2 bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h1">Nacho</MudText>
 
-            <MudText Class="butterfly" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h3">20 de abril de 2024</MudText>
+            <MudText Class="mt-14 dayroman" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">¡Nos casamos!</MudText>
+            <MudText Class="mt-8 dayroman" Align="Align.Center" Color="Color.Tertiary" Typo="Typo.h5">Ceremonia: Campanario, Badajoz</MudText>
+            <MudText Class="dayroman" Align="Align.Center" Color="Color.Tertiary" Typo="Typo.h5">Banquete: Medellín, Badajoz</MudText>
+
         </MudContainer>
 
     </div>
@@ -65,11 +66,11 @@
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Dark" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+            <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
         </MudContainer>
 
-        <div class="d-flex align-center justify-center mt-15">
-            <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Tertiary">CONFIRMO</MudButton>
+        <div class="d-flex align-center justify-center mt-15 mb-15">
+            <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
         </div>
     </MudItem>
 
@@ -115,7 +116,7 @@
 
     .foto1 {
         /* background-color: var(--color1); */
-        background-image: url('images/fotoMaizal2.jpg');
+        /* background-image: url('images/fotoMaizal2.jpg');  */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -123,6 +124,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+
     }
 
         .foto1::before {
