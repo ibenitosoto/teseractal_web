@@ -92,14 +92,18 @@
 
     private async Task<bool> WriteToExcel()
     {
-        string requestUrl = "https://prod-194.westeurope.logic.azure.com:443/workflows/a5eae2eec05a45a281292a5e4d1d50b8/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=9JW_D3CMcEYUfqhMI_L_A4_aXWf3adrCHqLaSCzCKsc";
+        AssignBusValues();
+
+        string requestUrl = "https://prod-192.westeurope.logic.azure.com:443/workflows/2451964ea0d84f448d8e41667eb3efde/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8WJsd93o0MUOd9-a6faLnKjnTII2wCB7yzEd-DaznKs";
 
         // Builds the request body in JSON format string and converts it to StringContent to be read by HTTPClient
         string json = "{ " +
             "\"Nombre\" : " + "\"" + model.Name + "\"," +
             "\"Apellido\" : " + "\"" + model.LastName + "\"," +
-            "\"Email\" : " + "\"" + model.Email + "\"," +
-            "\"Intolerancias-Menu\" : " + "\"" + model.SpecialMenu + "\"" +
+            "\"Nombre-Pareja\" : " + "\"" + model.NameAcompanante + "\"," +
+            "\"Apellido-Pareja\" : " + "\"" + model.LastNameAcompanante + "\"," +
+            "\"Autobus Campanario - Medellin\" : " + "\"" + model.BusCampanarioMedellin + "\"," +
+            "\"Autobus Medellin - Campanario\" : " + "\"" + model.BusMedellinCampanario + "\"" +
             " }";
 
         bool isSuccessfullRequest = HTTPrequest.SendRequest(json, requestUrl);
@@ -110,6 +114,27 @@
         else
         {
             return false;
+        }
+    }
+
+    private void AssignBusValues()
+    {
+        if (Label_CheckBox1)
+        {
+            model.BusCampanarioMedellin = "SI";
+        }
+        else
+        {
+            model.BusCampanarioMedellin = " ";
+        }
+
+        if (Label_CheckBox2)
+        {
+            model.BusMedellinCampanario = "SI";
+        }
+        else
+        {
+            model.BusMedellinCampanario = " ";
         }
     }
 }

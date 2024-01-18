@@ -13,8 +13,14 @@
         public string SpecialMenu { get; set; }
 
         public string Buses { get; set; }
+
         public string NameAcompanante { get; set; }
+
         public string LastNameAcompanante { get; set; }
+
+        public string BusCampanarioMedellin { get; set; }
+
+        public string BusMedellinCampanario { get; set; }
     }
 
 }
