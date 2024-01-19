@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Bacalisties';
-    src: url('/fonts/Bacalisties.woff2') format('woff2'), url('/fonts/Bacalisties.woff') format('woff');
+    src: url('/fonts/Bacalisties.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -78,6 +78,22 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Quicksand Bold';
+    src: url('QuicksandBold-Regular.woff2') format('woff2'), url('QuicksandBold-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand Light';
+    src: url('QuicksandLight-Regular.woff2') format('woff2'), url('QuicksandLight-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 .bacalisties {
     font-family: 'Bacalisties';
 }
@@ -116,5 +132,13 @@
 
 .butterfly {
     font-family: 'Beautiful Butterfly';
+}
+
+.quicksandLight {
+    font-family: 'Quicksand Light';
+}
+
+.quicksandBold {
+    font-family: 'Quicksand Bold';
 }
 
