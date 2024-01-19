@@ -14,6 +14,12 @@
     <MudImage ObjectFit="ObjectFit.Cover" Height="200" Width="400" Src=".\images\fotoMaizal.jpg" Alt="Foto maizal" Class="rounded-lg" />
 </div> *@
 
+<div class="container">
+    <img src="/images/hojas.svg" alt="Vector Image" class="hojas">
+    <img src="/images/rama1.svg" alt="Vector Image" class="rama1">
+</div>
+
+
 <div class="flex-container">
 
     <div class="foto1">
@@ -24,14 +30,22 @@
             <MudText Class="pa-2 bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">y</MudText>
             <MudText Class="pa-2 bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Nacho</MudText>
 
-
             <MudText Class="mt-8 quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia: Campanario, Badajoz</MudText>
-            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Banquete: Medellín, Badajoz</MudText>
+            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración: Medellín, Badajoz</MudText>
 
         </MudContainer>
 
     </div>
 
+</div>
+
+<div class="container">
+    <img src="/images/hojas.svg" alt="Vector Image" class="hojas">
+    <img src="/images/rama1.svg" alt="Vector Image" class="rama1">
+</div>
+
+<div class="container">
+    <div class="vertical-line"></div>
 </div>
 
 <MudGrid>
@@ -100,17 +114,20 @@
         justify-content: center;
         align-items: center;
         position: relative;
-
+        /* background-color: #BFD09A; */
     }
 
         .foto1::before {
             content: "";
-            background-color: rgba(255, 255, 255, 0.85); /* Adjust the opacity as needed */
+            background-color: rgba(191, 208, 154, 0.1); /* Adjust the opacity as needed */
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
+            margin: 40px;
+            border: 2px solid #BFD09A;
+
         }
 
     .text-overlay {
@@ -134,6 +151,48 @@
         background-repeat: no-repeat;
         justify-content: center;
         align-items: center;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .vertical-line {
+        border-left: 2px solid; /* Adjust thickness and color as needed */
+        color: #BFD09A;
+        height: 200px; /* Adjust height as needed */
+    }
+
+    .container {
+        position: relative;
+        /* Add other styles for your content container if needed */
+    }
+
+    .hojas {
+        position: absolute;
+        top: 5%; /* Adjust this value to control the distance from the top */
+        left: 0; /* Adjust this value to control the distance from the left */
+        /* You can also use right: 0; for sticking to the right side */
+        width: 100px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        /* You can also use max-width or max-height to set limits *
+        /* Add other styles for your image if needed */
+        margin-top: -5px;
+    }
+
+    .rama1 {
+        position: absolute;
+        top: 0; /* Adjust this value to control the distance from the top */
+        right: 0; /* Adjust this value to control the distance from the left */
+        /* You can also use right: 0; for sticking to the right side */
+        width: 400px; /* Adjust the width as needed */
+        height: auto; /* Maintain the aspect ratio */
+        /* You can also use max-width or max-height to set limits *
+            /* Add other styles for your image if needed */
+        margin-top: -50px;
     }
 
 </style>
