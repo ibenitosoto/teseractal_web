@@ -79,16 +79,8 @@
 }
 
 @font-face {
-    font-family: 'Quicksand Light';
-    src: url('QuicksandLight-Regular.woff2') format('woff2'), url('QuicksandLight-Regular.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Quicksand Book';
-    src: url('QuicksandBook-Regular.woff2') format('woff2'), url('QuicksandBook-Regular.woff') format('woff');
+    src: url('/fonts/QuicksandBook-Regular.woff2') format('woff2'), url('/fonts/QuicksandBook-Regular.woff') format('woff'), url('/fonts/QuicksandBook-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -96,8 +88,16 @@
 
 @font-face {
     font-family: 'Quicksand Bold';
-    src: url('QuicksandBold-Regular.woff2') format('woff2'), url('QuicksandBold-Regular.woff') format('woff');
+    src: url('/fonts/QuicksandBold-Regular.woff2') format('woff2'), url('/fonts/QuicksandBold-Regular.woff') format('woff'), url('/fonts/QuicksandBold-Regular.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand Light';
+    src: url('/fonts/QuicksandLight-Regular.woff2') format('woff2'), url('/fonts/QuicksandLight-Regular.woff') format('woff'), url('/fonts/QuicksandLight-Regular.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
