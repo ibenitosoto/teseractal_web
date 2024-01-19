@@ -79,17 +79,25 @@
 }
 
 @font-face {
-    font-family: 'Quicksand Bold';
-    src: url('QuicksandBold-Regular.woff2') format('woff2'), url('QuicksandBold-Regular.woff') format('woff');
-    font-weight: bold;
+    font-family: 'Quicksand Light';
+    src: url('QuicksandLight-Regular.woff2') format('woff2'), url('QuicksandLight-Regular.woff') format('woff');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Quicksand Light';
-    src: url('QuicksandLight-Regular.woff2') format('woff2'), url('QuicksandLight-Regular.woff') format('woff');
-    font-weight: 300;
+    font-family: 'Quicksand Book';
+    src: url('QuicksandBook-Regular.woff2') format('woff2'), url('QuicksandBook-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand Bold';
+    src: url('QuicksandBold-Regular.woff2') format('woff2'), url('QuicksandBold-Regular.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
@@ -136,6 +144,10 @@
 
 .quicksandLight {
     font-family: 'Quicksand Light';
+}
+
+.quicksandBook {
+    font-family: 'Quicksand Book';
 }
 
 .quicksandBold {
