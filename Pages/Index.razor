@@ -23,7 +23,7 @@
 <div class="flex-container">
 
     <div class="marco1">
-        <MudContainer Class="mt-15 text-overlay flex-column align-center justify-center mud-width-full">
+        <MudContainer Class="mt-0 text-overlay flex-column align-center justify-center mud-width-full">
             <MudText Class="mb-6 quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">¡Nos casamos!</MudText>
 
             <MudText Class="bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">M. Isabel</MudText>
@@ -44,8 +44,7 @@
 
 
 
-<MudText Class="mt-8 quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia: Campanario, Badajoz</MudText>
-<MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración: Medellín, Badajoz</MudText>
+
 
 <div class="container">
     <div class="vertical-line"></div>
@@ -53,7 +52,17 @@
 
 <MudGrid>
 
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
+            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Campanario, Badajoz</MudText>
 
+            <MudText Class="mt-10 quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
+            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Medellín, Badajoz</MudText>
+        </MudContainer>
+
+
+    </MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
@@ -131,7 +140,6 @@
         align-items: center;
         position: relative;
         /* background-color: #BFD09A; */
-        margin-top: 10px;
     }
 
         .marco1::before {
@@ -202,13 +210,13 @@
     .hojas2 {
         position: absolute;
         top: 0; /* Adjust this value to control the distance from the top */
-        right: 0; /* Adjust this value to control the distance from the left */
+        right: -4%; /* Adjust this value to control the distance from the left */
         /* You can also use right: 0; for sticking to the right side */
         width: 80px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
                 /* Add other styles for your image if needed */
-        margin-top: -30px;
+        margin-top: -70px;
         z-index: 2;
         transform: scaleX(-1);
     }
@@ -235,7 +243,7 @@
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
                     /* Add other styles for your image if needed */
-        margin-top: -50px;
+        margin-top: -70px;
         z-index: 2;
     }
 
