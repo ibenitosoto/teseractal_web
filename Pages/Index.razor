@@ -52,9 +52,19 @@
 </MudContainer>
 
 
-@* <div class="container">
-    <div class="vertical-line"></div>
-</div> *@
+<MudGrid Justify=Justify.Center Class="greenContainer" Spacing="1">
+    <MudItem Class="mt-8">
+        <MudImage Src="images/fotoMaizal.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+    </MudItem>
+
+    <MudItem>
+        <MudImage Src="images/fotoSantiago.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+    </MudItem>
+
+    <MudItem Class="mb-8">
+        <MudImage Src="images/fotoCies.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+    </MudItem>
+</MudGrid>
 
 <MudGrid>
     <MudItem xs="12">
@@ -167,6 +177,7 @@
         --primary-color: #BFD09A; /* Define your primary color */
         --secondary-color: #B3CEC3; /* Define your secondary color */
         --tertiary-color: #808285;
+        --primary-light: #DFEAC1;
     }
     /* Custom CSS to override MudBlazor MudContainer padding */
     .mud-container {
@@ -337,6 +348,14 @@
         font-size: 1.2rem;
     }
 
+    .greenContainer {
+        background-color: var(--primary-light);
+    }
+
+    .foto {
+        width: 80vw;
+        opacity: 0.5;
+    }
 
 </style>
 
