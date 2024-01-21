@@ -74,6 +74,12 @@
             <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Campanario, Badajoz</MudText>
             <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
 
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <MudButton Href="https://maps.app.goo.gl/jtj8roxpo36CUudU6"
+                           Target="_blank"
+                           StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+            </div>
+
         </MudContainer>
     </MudItem>
 
@@ -95,16 +101,29 @@
             <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Medellín, Badajoz</MudText>
             <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
 
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <MudButton Href="https://maps.app.goo.gl/PrtwX3c8axoituxf9"
+                           Target="_blank" 
+                           StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+            </div>
+
         </MudContainer>
     </MudItem>
 
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <div class="vertical-line"></div>
+            </div>
+        </MudContainer>
+    </MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+            <MudText Class="mt-7 bacalisties" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
         </MudContainer>
 
-        <div class="d-flex align-center justify-center mt-15 mb-15">
+        <div class="d-flex align-center justify-center mt-5 mb-15">
             <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
         </div>
     </MudItem>
