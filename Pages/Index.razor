@@ -20,8 +20,30 @@
     <img src="/images/rama1.svg" alt="Vector Image" class="rama1">
 </div>
 
+<div class="marco1"></div>
+
 
 <div class="flex-container">
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h2 class="quicksandBook nosCasamos">¡Nos casamos!</h2>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">M. Isabel</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">y</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">Nacho</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h5 class="quicksandBook fecha">20 abril 2024</h5>
+    </Animation>
 @* 
     <div class="marco1">
         <MudContainer Class="mt-0 text-overlay flex-column align-center justify-center mud-width-full">
@@ -36,16 +58,10 @@
         </MudContainer>
     </div> *@
 
-    <div class="marco1">
-        <div class="text-overlay">
-            <h2 class="quicksandBook nosCasamos">¡Nos casamos!</h2>
-            <h1 class="bacalisties">M. Isabel</h1>
-            <h1 class="bacalisties">y</h1>
-            <h1 class="bacalisties">Nacho</h1>
-            <h5 class="quicksandBook fecha">20 abril 2024</h5>
-        </div>
-    </div>
+
 </div>
+
+
 
 <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
         <img src="/images/hojas.svg" alt="Vector Image" class="hojas2">
@@ -128,9 +144,9 @@
     </MudItem>
 
     <MudItem xs="12">
-        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
+        <MudContainer Class="mt-8 flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
                     <div class="vertical-line"></div>
                 </AnimateOnScroll>
             </div>
@@ -176,16 +192,16 @@
 
     <MudItem xs="12">
         <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-            <img src="/images/hojas.svg" alt="Vector Image" class="hojas">
+            <img src="/images/rama4.svg" alt="Vector Image" class="rama5 rama6">
             <img src="/images/rama4.svg" alt="Vector Image" class="rama5">
         </MudContainer>
     </MudItem>
 
     <MudItem xs="12">
-        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
+        <MudContainer Class="mt-8 flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
-                    <div class="vertical-line"></div>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line longline"></div>
                 </AnimateOnScroll>
             </div>
         </MudContainer>
@@ -260,21 +276,30 @@
         margin: 0px !important;
     }
 
-    .flex-container div {
+    .flex-container {
         width: 100vw;
         height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
     .marco1 {
         /* background-color: var(--color1); */
         /* background-image: url('images/fotoMaizal2.jpg');  */
+        width: 100vw;
+        height: 80vh;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
+        position: absolute;
+        gap: 0px;
         /* background-color: #BFD09A; */
     }
 
@@ -290,18 +315,25 @@
             border: 2px solid #BFD09A;
         }
 
+        .marco1 h1,
+        .marco1 h2,
+        .marco1 h5 {
+            text-align: center;
+        }
+
+
     .text-overlay {
         position: absolute;
-        top: 40%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
         z-index: 1;
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 5px;
         align-items: center;
-        margin-top: 8.5rem;
+        margin-top: 4.5rem;
     }
 
 
@@ -328,6 +360,9 @@
         height: 100px; /* Adjust height as needed */
     }
 
+    .longline {
+        height: 300px;
+    }
     .container {
         position: relative;
         /* Add other styles for your content container if needed */
@@ -407,7 +442,7 @@
     .rama4 {
         position: absolute;
         top: 0; /* Adjust this value to control the distance from the top */
-        left: -1%;
+        left: -5%;
         height: 350px; 
         width: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
@@ -420,7 +455,7 @@
     .rama5 {
         position: absolute;
         top: 0; /* Adjust this value to control the distance from the top */
-        right: -3%;
+        right: -5%;
         height: 350px;
         width: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
@@ -431,11 +466,17 @@
         opacity: 0.7;
     }
 
+    .rama6 {
+        left: -5%;
+        transform: scaleX(1);
+    }
+
     .bacalisties {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 200;
         color: var(--primary-color); 
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
+        margin-top: 1vh;
     }
 
     .quicksandBook {
