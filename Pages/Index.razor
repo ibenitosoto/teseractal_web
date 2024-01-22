@@ -1,6 +1,7 @@
 ﻿@page "/"
 <link rel="stylesheet" href="./css/custom-fonts.css" />
 
+
 @using Boda_BlazorWASM_PowerAutomate.Components;
 @using Boda_BlazorWASM_PowerAutomate.Models;
 @using System.ComponentModel.DataAnnotations
@@ -47,22 +48,33 @@
 </div>
 
 <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-    <img src="/images/hojas.svg" alt="Vector Image" class="hojas2">
-    <img src="/images/rama2.svg" alt="Vector Image" class="rama2">
+        <img src="/images/hojas.svg" alt="Vector Image" class="hojas2">
+        <img src="/images/rama2.svg" alt="Vector Image" class="rama2">
 </MudContainer>
 
 
 <MudGrid Justify=Justify.Center Class="greenContainer" Spacing="1">
     <MudItem Class="mt-8">
+        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
         <MudImage Src="images/fotoMaizal.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
     </MudItem>
 
     <MudItem>
+             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+
         <MudImage Src="images/fotoSantiago.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
     </MudItem>
 
     <MudItem Class="mb-8">
+        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+
         <MudImage Src="images/fotoCies.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
     </MudItem>
 </MudGrid>
 
@@ -75,7 +87,9 @@
     <MudItem xs="12">
         <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <div class="vertical-line"></div>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
             </div>
         </MudContainer>
     </MudItem>
@@ -83,25 +97,42 @@
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
             <div class="d-flex align-center justify-center">
-                <MudIcon Icon="@Icons.Material.Filled.Church" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.Church" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
             </div>
-            <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
-            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Campanario, Badajoz</MudText>
-            <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Campanario, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
+            </AnimateOnScroll>
+
+
 
             <div class="d-flex align-center justify-center mt-4 mb-4">
-                <MudButton Href="https://maps.app.goo.gl/jtj8roxpo36CUudU6"
-                           Target="_blank"
-                           StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+
+                    <MudButton Href="https://maps.app.goo.gl/jtj8roxpo36CUudU6"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
+
             </div>
 
         </MudContainer>
     </MudItem>
 
     <MudItem xs="12">
-        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <div class="vertical-line"></div>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
             </div>
         </MudContainer>
     </MudItem>
@@ -115,24 +146,33 @@
 
 
 
-    <MudItem xs="12">
+<MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
             <div class="d-flex align-center justify-center">
-                <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
             </div>
 
-            <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
-            <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Medellín, Badajoz</MudText>
-            <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Medellín, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
+            </AnimateOnScroll>
 
             <div class="d-flex align-center justify-center mt-4 mb-4">
-                <MudButton Href="https://maps.app.goo.gl/PrtwX3c8axoituxf9"
-                           Target="_blank" 
-                           StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+                    <MudButton Href="https://maps.app.goo.gl/PrtwX3c8axoituxf9"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
             </div>
-
         </MudContainer>
-    </MudItem>
+</MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
@@ -142,20 +182,26 @@
     </MudItem>
 
     <MudItem xs="12">
-        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <div class="vertical-line"></div>
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
             </div>
         </MudContainer>
     </MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <MudText Class="mt-7 bacalisties" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="mt-7 bacalisties" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+            </AnimateOnScroll>
         </MudContainer>
 
         <div class="d-flex align-center justify-center mt-5 mb-15">
-            <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
+            </AnimateOnScroll>
         </div>
     </MudItem>
 
