@@ -210,11 +210,11 @@
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
-                <MudText Class="mt-7 bacalisties" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">¿Nos confirmas tu asistencia?</MudText>
+                <MudText Class="mt-7 dayroman" Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">¿Nos confirmas tu asistencia?</MudText>
             </AnimateOnScroll>
         </MudContainer>
 
-        <div class="d-flex align-center justify-center mt-5 mb-15">
+        <div class="d-flex align-center justify-center mt-5 mb-5">
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
             </AnimateOnScroll>
@@ -224,15 +224,13 @@
     @if (IsAttendanceConfirmed)
     {
         <MudItem Class="mt-2" xs="12">
-            <MudText Class="mt-10 butterfly" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
-            <MudText Class="mt-10 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">Danos algunos datos para confirmar tu asistencia</MudText>
+            <MudText Class="mt-10 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
+            <MudText Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
 
-            <div class="d-flex mt-8 align-center justify-center">
-                <MudRadioGroup T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
-                    <MudRadio Option="@("Option1")">Voy SIN acompañante</MudRadio>
-                    <MudRadio Option="@("Option2")">Voy CON acompañante</MudRadio>
-                </MudRadioGroup>
-            </div>
+            <MudRadioGroup Class="mt-6" T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
+                <MudRadio Class="radiobutton align-center justify-center mud-width-full" Option="@("Option1")">Voy SIN acompañante</MudRadio>
+                <MudRadio Class="radiobutton align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
+            </MudRadioGroup>
 
             @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
             {
@@ -249,6 +247,23 @@
 
         </MudItem>
     }
+
+    <MudItem xs="12">
+        <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
+            <img src="/images/rama4.svg" alt="Vector Image" class="rama5 rama6">
+            <img src="/images/rama4.svg" alt="Vector Image" class="rama5">
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line longline"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
 
 </MudGrid>
 
