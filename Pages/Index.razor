@@ -28,7 +28,7 @@
 <div class="flex-container">
 
     <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
-        <h2 class="quicksandBook nosCasamos">¡Nos casamos!</h2>
+        <h2 class="quicksandBook nosCasamos">@welcomeMessage</h2>
     </Animation>
 
     <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
@@ -611,6 +611,17 @@
         StateHasChanged();
 
         ScrollToBottom();
+    }
+
+    private string welcomeMessage;
+
+    protected override void OnInitialized()
+    {
+        // Get the user's preferred language from the browser
+        var userLanguage = System.Globalization.CultureInfo.CurrentCulture.Name;
+
+        // Set the welcome message based on the user's language
+        welcomeMessage = userLanguage.StartsWith("es") ? "¡Nos casamos!" : "We're getting married!";
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
