@@ -211,13 +211,13 @@
 
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudText Class="mt-7 dayroman" Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">¿Nos confirmas tu asistencia?</MudText>
             </AnimateOnScroll>
         </MudContainer>
 
         <div class="d-flex align-center justify-center mt-5 mb-5">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
             </AnimateOnScroll>
         </div>
@@ -233,7 +233,7 @@
     <MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
             <div class="container">
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
                     <div class="vertical-line longline"></div>
                 </AnimateOnScroll>
             </div>
@@ -262,15 +262,15 @@
         </MudItem>
 
         <MudItem Class="mt-2" xs="12">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(1)">
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                 <MudText Class="mt-0 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
             </AnimateOnScroll>
 
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(1.3)">
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                 <MudText Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
             </AnimateOnScroll>
 
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(1.6)">
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                 <MudRadioGroup Class="mt-6" T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
                     <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option1")">Voy SIN acompañante</MudRadio>
                     <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
@@ -279,25 +279,25 @@
 
             @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
             {
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(1.9)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
                 </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(2.2)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <FormAsistencia></FormAsistencia>
                 </AnimateOnScroll>
             }
             else if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option2")
             {
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(1.9)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">tus datos</MudText>
                 </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(2.2)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <FormAsistencia></FormAsistencia>
                 </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(2.5)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">datos acompañante</MudText>
                 </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(2.8)">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
                     <FormAsistencia></FormAsistencia>
                 </AnimateOnScroll>
             }
