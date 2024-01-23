@@ -243,27 +243,10 @@
 
     @if (IsAttendanceConfirmed)
     {
-        <MudItem xs="12">
-            <MudContainer Class="flex-column align-center justify-center mud-width-full">
-                <div class="container">
-                    <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(0.5)">
-                        <div class="vertical-line"></div>
-                    </AnimateOnScroll>
-                </div>
-            </MudContainer>
-        </MudItem>
-
-
-        <MudItem xs="12">
-            <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-                <img src="/images/rama3.svg" alt="Vector Image" class="rama7">
-                <img src="/images/rama3.svg" alt="Vector Image" class="rama7 rama8">
-            </MudContainer>
-        </MudItem>
 
         <MudItem Class="mt-2" xs="12">
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudText Class="mt-0 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
+                <MudText Class="mt-6 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
             </AnimateOnScroll>
 
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
@@ -276,6 +259,23 @@
                     <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
                 </MudRadioGroup>
             </AnimateOnScroll>
+
+            <MudItem xs="12">
+                <MudContainer Class="mt-8 flex-column align-center justify-center mud-width-full">
+                    <div class="container">
+                        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(0.5)">
+                            <div class="vertical-line"></div>
+                        </AnimateOnScroll>
+                    </div>
+                </MudContainer>
+            </MudItem>
+
+            <MudItem xs="12">
+                <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
+                    <img src="/images/rama3.svg" alt="Vector Image" class="rama7">
+                    <img src="/images/rama3.svg" alt="Vector Image" class="rama7 rama8">
+                </MudContainer>
+            </MudItem>
 
             @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
             {
