@@ -223,13 +223,23 @@
 
     @if (IsAttendanceConfirmed)
     {
+        <MudItem xs="12">
+            <MudContainer Class="flex-column align-center justify-center mud-width-full">
+                <div class="container">
+                    <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(0.5)">
+                        <div class="vertical-line"></div>
+                    </AnimateOnScroll>
+                </div>
+            </MudContainer>
+        </MudItem>
+
         <MudItem Class="mt-2" xs="12">
-            <MudText Class="mt-10 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
+            <MudText Class="mt-0 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
             <MudText Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
 
             <MudRadioGroup Class="mt-6" T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
-                <MudRadio Class="radiobutton align-center justify-center mud-width-full" Option="@("Option1")">Voy SIN acompañante</MudRadio>
-                <MudRadio Class="radiobutton align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
+                <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option1")">Voy SIN acompañante</MudRadio>
+                <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
             </MudRadioGroup>
 
             @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
@@ -239,9 +249,9 @@
             }
             else if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option2")
             {
-                <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
+                <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">tus datos</MudText>
                 <FormAsistencia></FormAsistencia>
-                <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">datos de tu acompañante</MudText>
+                <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">datos acompañante</MudText>
                 <FormAsistencia></FormAsistencia>
             }
 
@@ -518,6 +528,11 @@
         width: 80vw;
         opacity: 0.5;
         border: 2px solid #ffff;
+    }
+
+    .mud-radio-content {
+        font-family: Quicksand Book;
+        color: var(--primary-color);
     }
 
 </style>
