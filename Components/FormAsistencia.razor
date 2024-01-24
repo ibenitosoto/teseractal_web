@@ -3,7 +3,7 @@
 @using System.ComponentModel.DataAnnotations
 
 
-<MudPaper Class="mt-2 mx-7 mb-7 pa-4" Elevation="10">
+<MudPaper id="@Id" Class="mt-2 mx-7 mb-7 pa-4" Elevation="10">
     <MudForm Model="@model" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
         <MudTextField T="string" Label="Nombre" @bind-Value="model.Name" Required="true" RequiredError="Por favor rellena el nombre" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
         <MudTextField T="string" Label="Apellido" @bind-Value="model.LastName" Required="true" RequiredError="Por favor rellena el apellido" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Person" AdornmentColor="Color.Primary" />
@@ -46,6 +46,7 @@
 
     [Inject] ISnackbar Snackbar { get; set; }
 
+    [Parameter] public string Id { get; set; }
 
     private string valueMenu { get; set; } = "Nada seleccionado";
     private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
