@@ -1,15 +1,23 @@
-    function scrollToElement(elementId) {
-        var element = document.getElementById(elementId);
+function scrollToElement(elementId, duration) {
+    var element = document.getElementById(elementId);
     if (element) {
-            var offsetTop = element.offsetTop;
-    var windowHeight = window.innerHeight;
-    var targetHeight = element.offsetHeight;
+        var start = window.scrollY;
+        var end = element.offsetTop - (window.innerHeight - element.offsetHeight) / 2;
+        var distance = end - start;
+        var startTime;
 
-    var scrollTo = offsetTop - (windowHeight - targetHeight) / 2;
+        function scrollAnimation(currentTime) {
+            if (!startTime) startTime = currentTime;
+            var timeElapsed = currentTime - startTime;
+            var scrollProgress = Math.min(timeElapsed / duration, 1);
+            window.scrollTo(0, start + distance * scrollProgress);
 
-    window.scrollTo({
-        top: scrollTo,
-    behavior: 'smooth'
-            });
+            if (timeElapsed < duration) {
+                requestAnimationFrame(scrollAnimation);
+            }
         }
+
+        requestAnimationFrame(scrollAnimation);
     }
+}
+
