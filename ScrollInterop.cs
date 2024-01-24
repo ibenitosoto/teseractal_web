@@ -14,6 +14,11 @@
         {
             return jsRuntime.InvokeVoidAsync("window.scrollByPixels");
         }
+
+        public static ValueTask ScrollToElement(this IJSRuntime jsRuntime)
+        {
+            return jsRuntime.InvokeVoidAsync("window.scrollToElement");
+        }
     }
 
 }

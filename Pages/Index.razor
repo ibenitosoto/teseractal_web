@@ -36,7 +36,7 @@
     </Animation>
 
     <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
-        <h1 class="bacalisties">y</h1>
+        <h1 class="bacalisties">@unionNombres</h1>
     </Animation>
 
     <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
@@ -44,7 +44,7 @@
     </Animation>
 
     <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
-        <h5 class="quicksandBook fecha">20 abril 2024</h5>
+        <h5 class="quicksandBook fecha">@fechaBoda</h5>
     </Animation>
 @* 
     <div class="marco1">
@@ -124,7 +124,7 @@
                 <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
-                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Campanario, Badajoz</MudText>
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Campanario, Badajoz</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
@@ -176,7 +176,7 @@
                 <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
-                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Medellín, Badajoz</MudText>
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Medellín, Badajoz</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
@@ -246,7 +246,7 @@
 
         <MudItem Class="mt-2" xs="12">
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudText Class="mt-6 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">¡Genial!</MudText>
+                <MudText Class="mt-6 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">@genial</MudText>
             </AnimateOnScroll>
 
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
@@ -557,7 +557,7 @@
     }
 
     .quicksandBook {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 400;
         color: var(--secondary-color); /* Secondary color */
     }
@@ -605,15 +605,12 @@
     private void ConfirmAttendance()
     {
         IsAttendanceConfirmed = true;
-        StateHasChanged();
-        Task.Delay(500);
-        ScrollByPixels();
-        StateHasChanged();
-
-        ScrollToBottom();
     }
 
     private string welcomeMessage;
+    private string unionNombres;
+    private string fechaBoda;
+    private string genial;
 
     protected override void OnInitialized()
     {
@@ -621,7 +618,12 @@
         var userLanguage = System.Globalization.CultureInfo.CurrentCulture.Name;
 
         // Set the welcome message based on the user's language
-        welcomeMessage = userLanguage.StartsWith("es") ? "¡Nos casamos!" : "We're getting married!";
+        welcomeMessage = userLanguage.StartsWith("es") ? "¡Nos casamos!" : "¡Nos vamos a casar!";
+        unionNombres = userLanguage.StartsWith("es") ? "y" : "y";
+        fechaBoda = userLanguage.StartsWith("es") ? "20 Abril 2024" : "20 April 2024";
+        genial = userLanguage.StartsWith("es") ? "¡Genial!" : "Great!";
+
+
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
