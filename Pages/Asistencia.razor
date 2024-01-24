@@ -68,7 +68,7 @@
             </AnimateOnScroll>
 
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudText Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
+                <MudText id="danosDatos" Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
             </AnimateOnScroll>
 
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
@@ -446,7 +446,7 @@
 
         if (!firstRender && IsAttendanceConfirmed)
         {
-            ScrollToBottom();
+            await ScrollToElement("danosDatos", 2000);
         }
 
         if (!firstRender && SelectedOptionAcompañante != null)
