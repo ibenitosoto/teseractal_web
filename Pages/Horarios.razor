@@ -1,4 +1,6 @@
 ﻿@page "/horarios"
+@inject IJSRuntime JSRuntime
+
 <link rel="stylesheet" href="/css/custom-fonts.css" />
 
 
@@ -10,60 +12,187 @@
 
 
 <MudGrid>
-    <MudItem Class="mt-5" xs="12">
-        <TimelineBoda></TimelineBoda>
+    <MudItem xs="12">
+        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
     </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="d-flex align-center justify-center">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.Church" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Campanario, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
+            </AnimateOnScroll>
+
+
+
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+
+                    <MudButton Href="https://maps.app.goo.gl/jtj8roxpo36CUudU6"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
+
+            </div>
+
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="mt-2 flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="d-flex align-center justify-center">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.DirectionsBus" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Bus a restaurante</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Estación autobuses, Campanario</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">14:15</MudText>
+            </AnimateOnScroll>
+
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+                    <MudButton Href="https://maps.app.goo.gl/ymAdgEueZz7cHNaB9"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="mt-2 flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="d-flex align-center justify-center">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Medellín, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
+            </AnimateOnScroll>
+
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+                    <MudButton Href="https://maps.app.goo.gl/PrtwX3c8axoituxf9"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="mt-2 flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
 </MudGrid>
 
 <style>
+    :root {
+        --primary-color: #BFD09A; /* Define your primary color */
+        --secondary-color: #B3CEC3; /* Define your secondary color */
+        --tertiary-color: #808285;
+        --primary-light: #DFEAC1;
+    }
+    /* Custom CSS to override MudBlazor MudContainer padding */
+    .mud-container {
+        padding: 0 !important;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .mud-grid-spacing-xs-3 {
+        width: 100vw !important;
+        margin: 0px !important;
+    }
+
+    .flex-container {
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
     .flex-container div {
         width: 100vw;
         height: 100vh;
     }
 
-    .foto1 {
-        /* background-color: var(--color1); */
-        background-image: url('images/fotoMaizal2.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+    .vertical-line {
+        margin-top: 0px;
+        border-left: 2px solid; /* Adjust thickness and color as needed */
+        color: #BFD09A;
+        height: 100px; /* Adjust height as needed */
     }
 
-        .foto1::before {
-            content: "";
-            background-color: rgba(255, 255, 255, 0.85); /* Adjust the opacity as needed */
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-    .text-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+    .longline {
+        height: 300px;
     }
 
-
-    .foto2 {
-        /* background-color: var(--color1); */
-        /* background-image: url('images/fotoSantiago2.jpg'); */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        justify-content: center;
+    .container {
+        display: flex;
         align-items: center;
+        justify-content: center;
     }
 
 </style>
