@@ -16,7 +16,7 @@
         <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
             <div class="container">
                 <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
-                    <div class="vertical-line"></div>
+                    <div class="vertical-line longline"></div>
                 </AnimateOnScroll>
             </div>
         </MudContainer>
@@ -34,7 +34,7 @@
                 <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
-                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Campanario, Badajoz</MudText>
+                <MudText id="ceremoniaTexto" Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Campanario, Badajoz</MudText>
             </AnimateOnScroll>
             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
                 <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
@@ -198,48 +198,36 @@
 </style>
 
 @code {
-    bool success;
-    string[] errors = { };
-    MudTextField<string> pwField1;
-    MudForm form;
-
-    public bool IsAttendanceConfirmed { get; set; } = false;
-    public string SelectedOptionAcompañante { get; set; }
-
-    MudDatePicker _picker;
-    DateTime? date;
-    DateTime weddingDate = new System.DateTime(2024, 04, 20);
-
     protected override void OnInitialized()
     {
 
     }
 
-
-    private void ConfirmAttendance()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        IsAttendanceConfirmed = true;
+        if (firstRender)
+        {
+            await ScrollToElement("ceremoniaTexto", 2000);
+        }
+
+
     }
 
+    private async Task ScrollToBottom()
+    {
+        await JSRuntime.ScrollToBottom();
+    }
 
-    private string valueMenu { get; set; } = "Nada seleccionado";
-    private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
+    private async Task ScrollByPixels()
+    {
+        await JSRuntime.ScrollByPixels();
+    }
 
-    private string[] intolerancias =
-      {
-        "Nada", "Lactosa", "Gluten", "Marisco", "Menú vegetariano", "Menú vegano", "Otros"
-    };
-
-    private string valueBus { get; set; } = "Nada seleccionado";
-    private IEnumerable<string> opcionesBus { get; set; } = new HashSet<string>();
-    private string[] buses =
-      {
-        "Ninguno",
-        "14:30 Campanario (Ceremonia) - Quinto Cecilio (Banquete)",
-        "01:00 Quinto Cecilio (Banquete) - Medellín",
-        "01:00 Quinto Cecilio (Banquete) - Campanario",
-    };
-
+    private async Task ScrollToElement(string elementToScrollId, int scrollDuration)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", elementToScrollId, scrollDuration);
+    }
+   
 
 }
 
