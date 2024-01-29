@@ -506,8 +506,6 @@
         unionNombres = userLanguage.StartsWith("es") ? "y" : "y";
         fechaBoda = userLanguage.StartsWith("es") ? "20 Abril 2024" : "20 April 2024";
         genial = userLanguage.StartsWith("es") ? "¡Genial!" : "Great!";
-
-
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -528,9 +526,6 @@
     {
         await JSRuntime.ScrollByPixels();
     }
-  
-
-
 }
 
 
