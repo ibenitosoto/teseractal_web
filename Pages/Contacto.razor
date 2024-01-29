@@ -54,19 +54,5 @@
 </MudPaper>
 
 @code {
-    public string TelefonoMaria { get; set; } = "+34 691715617";
-    public string TelefonoNacho { get; set; } = "+34 618159730";
 
-
-    private async Task CallMIsabel()
-    {
-        // Implement JavaScript interop to trigger the phone call
-        await JSRuntime.InvokeVoidAsync("makePhoneCall", "+34691715617");
-    }
-
-    private async Task CallNacho()
-    {
-        // Implement JavaScript interop to trigger the phone call
-        await JSRuntime.InvokeVoidAsync("makePhoneCall", "+34618159730");
-    }
 }
