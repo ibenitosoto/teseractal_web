@@ -17,10 +17,11 @@
         public string NameAcompanante { get; set; }
 
         public string LastNameAcompanante { get; set; }
+        public string BusHotelesAIglesia { get; set; }
 
         public string BusCampanarioMedellin { get; set; }
 
-        public string BusMedellinCampanario { get; set; }
+        public string BusVuelta { get; set; }
     }
 
 }

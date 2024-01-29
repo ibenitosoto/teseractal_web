@@ -18,8 +18,9 @@
             }
         </MudSelect> *@
 
+        <MudCheckBox Class="mt-6" @bind-Value="@Label_CheckBox0" Label="Bus de Hoteles a Iglesia (Campanario)" Color="Color.Dark"></MudCheckBox>
         <MudCheckBox Class="mt-6" @bind-Value="@Label_CheckBox1" Label="Bus Iglesia (Campanario) a Restaurante (Medellín)" Color="Color.Dark"></MudCheckBox>
-        <MudCheckBox Class="mt-4" @bind-Value="@Label_CheckBox2" Label="Bus Restaurante (Medellín) a Iglesia (Campanario)" Color="Color.Dark"></MudCheckBox>
+        <MudCheckBox Class="mt-4" @bind-Value="@Label_CheckBox2" Label="Bus de vuelta a Campanario (Horarios por confirmar)" Color="Color.Dark"></MudCheckBox>
 
 
         @if (isSuccessfulWriteToExcel)
@@ -54,6 +55,7 @@
     private string valueMenu { get; set; } = "Nada seleccionado";
     private IEnumerable<string> opcionesMenu { get; set; } = new HashSet<string>();
 
+    public bool Label_CheckBox0 { get; set; } = false;
     public bool Label_CheckBox1 { get; set; } = false;
     public bool Label_CheckBox2 { get; set; } = false;
 
@@ -102,8 +104,9 @@
             "\"Apellido\" : " + "\"" + model.LastName + "\"," +
             "\"Nombre-Pareja\" : " + "\"" + model.NameAcompanante + "\"," +
             "\"Apellido-Pareja\" : " + "\"" + model.LastNameAcompanante + "\"," +
+            "\"Autobus Hoteles - Iglesia\" : " + "\"" + model.BusHotelesAIglesia + "\"," +
             "\"Autobus Campanario - Medellin\" : " + "\"" + model.BusCampanarioMedellin + "\"," +
-            "\"Autobus Medellin - Campanario\" : " + "\"" + model.BusMedellinCampanario + "\"" +
+            "\"Autobus Medellin - Campanario\" : " + "\"" + model.BusVuelta + "\"" +
             " }";
 
         bool isSuccessfullRequest = HTTPrequest.SendRequest(json, requestUrl);
@@ -119,22 +122,30 @@
 
     private void AssignBusValues()
     {
+        if (Label_CheckBox0)
+        {
+            model.BusHotelesAIglesia = "SI";
+        }
+        else
+        {
+            model.BusHotelesAIglesia = "";
+        }
         if (Label_CheckBox1)
         {
             model.BusCampanarioMedellin = "SI";
         }
         else
         {
-            model.BusCampanarioMedellin = " ";
+            model.BusCampanarioMedellin = "";
         }
 
         if (Label_CheckBox2)
         {
-            model.BusMedellinCampanario = "SI";
+            model.BusVuelta = "SI";
         }
         else
         {
-            model.BusMedellinCampanario = " ";
+            model.BusVuelta = " ";
         }
     }
 }
