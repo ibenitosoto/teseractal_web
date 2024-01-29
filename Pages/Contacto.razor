@@ -1,6 +1,8 @@
 ﻿@page "/contacto"
 <link rel="stylesheet" href="/css/custom-fonts.css" />
 
+@inject IJSRuntime JSRuntime
+
 
 @using Boda_BlazorWASM_PowerAutomate.Components;
 @using Boda_BlazorWASM_PowerAutomate.Models;
@@ -9,15 +11,16 @@
 <MudText Class="mt-7 butterfly" Align="Align.Center" Color="Color.Primary" Typo="Typo.h3">Contacto</MudText>
 
 <MudPaper Elevation="5" Class="ma-10" Width="flex-column align-center justify-center mud-width-full">
-    <MudList Clickable="true">s
+@*     <MudList Clickable="true">
         <MudListSubheader>
             Teléfonos de contacto
         </MudListSubheader>
 
         <MudListItem Icon="@Icons.Material.Filled.Person" IconColor="Color.Primary" Text="M. Isabel" InitiallyExpanded="true">
             <NestedList>
-                <MudListItem Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary">
-                    691715617
+                <MudListItem Class="d-flex align-center justify-center mud-width-full">
+                    <MudIconButton href="tel:+34 691715617" data-rel="external" Icon="@Icons.Material.Filled.Phone" Color="Color.Primary">M. Isabel</MudIconButton>
+                    <MudText InputType="@InputType.Telephone">+34 691715617</MudText>
                 </MudListItem>
             </NestedList>
         </MudListItem>
@@ -25,15 +28,45 @@
 
         <MudListItem Icon="@Icons.Material.Filled.Person" IconColor="Color.Primary" Text="Nacho" InitiallyExpanded="true">
             <NestedList>
-                <MudListItem Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary">
-                    618159730
+                <MudListItem Class="d-flex align-center justify-center mud-width-full">
+                    <MudIconButton @onclick="CallNacho" Icon="@Icons.Material.Filled.Phone" Color="Color.Primary"></MudIconButton>
+                    <MudText InputType="@InputType.Telephone">+34 618159730</MudText>
                 </MudListItem>
             </NestedList>
         </MudListItem>
 
     </MudList>
+
+    <MudTextField Class="pa-6" @bind-Value="TelefonoMaria" InputType="@InputType.Telephone" Label="Teléfono M. Isabel" Variant="Variant.Text" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Phone" AdornmentColor="Color.Primary" />
+    <MudTextField Class="pa-6" @bind-Value="TelefonoNacho" InputType="@InputType.Telephone" Label="Teléfono Nacho" Variant="Variant.Text" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Phone" AdornmentColor="Color.Primary" /> *@
+   
+    <MudList Clickable="true">
+        <MudListItem href="tel:+34 691715617" data-rel="external" Text="Llamar a M. Isabel" Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary" />
+        <MudDivider />
+
+        <MudListItem href="tel:+34 618159730" data-rel="external" Text="Llamar a Nacho" Icon="@Icons.Material.Filled.Phone" IconColor="Color.Primary" />
+
+    </MudList>
+
+    @*     <MudIconButton href="tel:+34 691715617" data-rel="external" Icon="@Icons.Material.Filled.Phone" Color="Color.Primary">M. Isabel</MudIconButton>
+        <MudIconButton href="tel:+34 618159730" data-rel="external" Icon="@Icons.Material.Filled.Phone" Color="Color.Primary">Nacho</MudIconButton>
+ *@
 </MudPaper>
 
 @code {
+    public string TelefonoMaria { get; set; } = "+34 691715617";
+    public string TelefonoNacho { get; set; } = "+34 618159730";
 
+
+    private async Task CallMIsabel()
+    {
+        // Implement JavaScript interop to trigger the phone call
+        await JSRuntime.InvokeVoidAsync("makePhoneCall", "+34691715617");
+    }
+
+    private async Task CallNacho()
+    {
+        // Implement JavaScript interop to trigger the phone call
+        await JSRuntime.InvokeVoidAsync("makePhoneCall", "+34618159730");
+    }
 }
