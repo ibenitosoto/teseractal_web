@@ -1,4 +1,4 @@
-﻿namespace Boda_BlazorWASM_PowerAutomate
+﻿namespace teseractal_web
 {
     using Microsoft.JSInterop;
     using System.Threading.Tasks;

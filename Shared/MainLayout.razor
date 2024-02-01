@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
-@using Boda_BlazorWASM_PowerAutomate.Components;
+@using teseractal_web.Components;
 
-<MudThemeProvider Theme="BodaTheme" />
+<MudThemeProvider Theme="teseractalTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -9,13 +9,13 @@
     <MudAppBar Elevation="0">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudSpacer />
-        <MudText Class="ma-7 pa-2 hellovalentica" Color="Color.Inherit" Align="Align.Center" Typo="Typo.h5">M Isabel y Nacho</MudText>
+        <MudText Class="ma-7 pa-2 quicksandBook" Color="Color.Inherit" Align="Align.Center" Typo="Typo.h5">teseractal</MudText>
         <MudSpacer/>
         <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" href="#"/>
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
         <MudDrawerHeader>
-            <MudText Class="" Color="Color.Primary" Align="Align.Center" Typo="Typo.subtitle1">Secciones</MudText>
+            <MudText Class="quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.subtitle1">teseractal</MudText>
         </MudDrawerHeader>
         <NavMenu />
     </MudDrawer>
@@ -32,7 +32,7 @@
         _drawerOpen = !_drawerOpen;
     }
 
-    MudTheme BodaTheme = new MyMudTheme();
+    MudTheme teseractalTheme = new MyMudTheme();
 
 }
 

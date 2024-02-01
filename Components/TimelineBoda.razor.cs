@@ -11,10 +11,10 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.JSInterop;
 using MudBlazor;
-using Boda_BlazorWASM_PowerAutomate;
-using Boda_BlazorWASM_PowerAutomate.Shared;
+using teseractal_web;
+using teseractal_web.Shared;
 
-namespace Boda_BlazorWASM_PowerAutomate.Components
+namespace teseractal_web.Components
 {
     public partial class TimelineBoda
     {

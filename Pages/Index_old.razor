@@ -1,16 +1,147 @@
-﻿@inject IJSRuntime JSRuntime
-<link rel="stylesheet" href="/css/custom-fonts.css" />
+﻿@page "/index_old"
+@inject IJSRuntime JSRuntime
+
+<link rel="stylesheet" href="./css/custom-fonts.css" />
+
 
 @using teseractal_web.Components;
 @using teseractal_web.Models;
 @using System.ComponentModel.DataAnnotations
 
+<PageTitle>teseractal</PageTitle>
+
+@* <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+ *@
+
+@*  <div class="d-flex justify-center">
+    <MudImage ObjectFit="ObjectFit.Cover" Height="200" Width="400" Src=".\images\fotoMaizal.jpg" Alt="Foto maizal" Class="rounded-lg" />
+</div> *@
+
+<div class="container">
+    <img src="/images/hojas.svg" alt="Vector Image" class="hojas">
+    <img src="/images/rama1.svg" alt="Vector Image" class="rama1">
+</div>
+
+<div class="marco1"></div>
+
+
+<div class="flex-container">
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h2 class="quicksandBook nosCasamos">@welcomeMessage</h2>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">M. Isabel</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">@unionNombres</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h1 class="bacalisties">Nacho</h1>
+    </Animation>
+
+    <Animation Effect="@Effect.FadeInDown" Speed="@Speed.Slow" Delay="@Delay.None" IterationCount="1">
+        <h5 class="quicksandBook fecha">@fechaBoda</h5>
+    </Animation>
+@* 
+    <div class="marco1">
+        <MudContainer Class="mt-0 text-overlay flex-column align-center justify-center mud-width-full">
+            <MudText Class="mb-6 quicksandBook nosCasamos" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">¡Nos casamos!</MudText>
+
+            <MudText Class="bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">M. Isabel</MudText>
+            <MudText Class="bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">y</MudText>
+            <MudText Class="bacalisties" Color="Color.Primary" Align="Align.Center" Typo="Typo.h2">Nacho</MudText>
+
+            <MudText Class="mt-4 quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">20 abril 2024</MudText>
+
+        </MudContainer>
+    </div> *@
+
+
+</div>
+
+
+
+<MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
+        <img src="/images/hojas.svg" alt="Vector Image" class="hojas2">
+        <img src="/images/rama2.svg" alt="Vector Image" class="rama2">
+</MudContainer>
+
+
+<MudGrid Justify=Justify.Center Class="greenContainer" Spacing="1">
+    <MudItem Class="mt-8">
+        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+        <MudImage Src="images/fotoMaizal.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
+    </MudItem>
+
+    <MudItem>
+             <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+
+        <MudImage Src="images/fotoSantiago.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
+    </MudItem>
+
+    <MudItem Class="mb-8">
+        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+
+        <MudImage Src="images/fotoCies.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+        </AnimateOnScroll>
+
+    </MudItem>
+</MudGrid>
+
+<div class="container">
+    <img src="/images/hojas.svg" alt="Vector Image" class="hojas">
+    <img src="/images/rama3.svg" alt="Vector Image" class="rama3">
+</div>
 
 <MudGrid>
     <MudItem xs="12">
-        <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-            <img src="/images/rama4.svg" alt="Vector Image" class="rama5 rama6">
-            <img src="/images/rama4.svg" alt="Vector Image" class="rama5">
+        <MudContainer Class="mt-16 flex-column align-center justify-center mud-width-full">
+            <div class="container">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
+                    <div class="vertical-line"></div>
+                </AnimateOnScroll>
+            </div>
+        </MudContainer>
+    </MudItem>
+
+    <MudItem xs="12">
+        <MudContainer Class="flex-column align-center justify-center mud-width-full">
+            <div class="d-flex align-center justify-center">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
+                    <MudIcon Icon="@Icons.Material.Filled.Church" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Ceremonia</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Campanario, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">13:00</MudText>
+            </AnimateOnScroll>
+
+
+
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+
+                    <MudButton Href="https://maps.app.goo.gl/jtj8roxpo36CUudU6"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
+                </AnimateOnScroll>
+
+            </div>
+
         </MudContainer>
     </MudItem>
 
@@ -18,109 +149,52 @@
         <MudContainer Class="mt-8 flex-column align-center justify-center mud-width-full">
             <div class="container">
                 <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)">
-                    <div class="vertical-line longline"></div>
+                    <div class="vertical-line"></div>
                 </AnimateOnScroll>
             </div>
         </MudContainer>
-    </MudItem>
-
-    <MudItem xs="12">
-        <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
-                <MudText Class="mt-7 dayroman" Align="Align.Center" Color="Color.Primary" Typo="Typo.h4">¿Nos confirmas tu asistencia?</MudText>
-            </AnimateOnScroll>
-        </MudContainer>
-
-        <div id="confirmationButton" class="d-flex align-center justify-center mt-5 mb-5">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
-                <MudButton OnClick="ConfirmAttendance" StartIcon="@Icons.Material.Filled.RocketLaunch" EndIcon="@Icons.Material.Filled.RocketLaunch" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">CONFIRMO</MudButton>
-            </AnimateOnScroll>
-        </div>
     </MudItem>
 
     <MudItem xs="12">
         <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-            <img src="/images/rama4.svg" alt="Vector Image" class="rama5 rama6">
-            <img src="/images/rama4.svg" alt="Vector Image" class="rama5">
+            <img src="/images/hojas.svg" alt="Vector Image" class="hojas2">
+            <img src="/images/rama4.svg" alt="Vector Image" class="rama4">
         </MudContainer>
     </MudItem>
 
-    <MudItem xs="12">
+
+
+<MudItem xs="12">
         <MudContainer Class="flex-column align-center justify-center mud-width-full">
-            <div class="container">
+            <div class="d-flex align-center justify-center">
                 <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)">
-                    <div class="vertical-line longline"></div>
+                    <MudIcon Icon="@Icons.Material.Filled.Restaurant" Size="Size.Large" Color="Color.Secondary"></MudIcon>
+                </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.2)">
+                <MudText Class="quicksandBold" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5">Celebración</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.4)">
+                <MudText Class="quicksandBook" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h5" translate="no">Medellín, Badajoz</MudText>
+            </AnimateOnScroll>
+            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.6)">
+                <MudText Class="quicksandLight" Align="Align.Center" Color="Color.Secondary" Typo="Typo.h4">15:00</MudText>
+            </AnimateOnScroll>
+
+            <div class="d-flex align-center justify-center mt-4 mb-4">
+                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(2)" AnimationDelay="TimeSpan.FromSeconds(0.8)">
+                    <MudButton Href="https://maps.app.goo.gl/PrtwX3c8axoituxf9"
+                               Target="_blank"
+                               StartIcon="@Icons.Material.Filled.LocationOn" Variant="Variant.Filled" Size="Size.Large" Color="Color.Secondary">VER UBICACION</MudButton>
                 </AnimateOnScroll>
             </div>
         </MudContainer>
-    </MudItem>
+</MudItem>
 
-
-    @if (IsAttendanceConfirmed)
-    {
-
-        <MudItem Class="mt-2" xs="12">
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudText Class="mt-6 adelia" Color="Color.Secondary" Align="Align.Center" Typo="Typo.h2">@genial</MudText>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudText id="danosDatos" Class="mt-10 dayroman" Color="Color.Primary" Align="Align.Center" Typo="Typo.h4">Danos algunos datos para confirmar tu asistencia</MudText>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                <MudRadioGroup Class="mt-6" T="string" @bind-SelectedOption="@SelectedOptionAcompañante" Required="true" RequiredError="Por favor di si vienes sola/o o con pareja!">
-                    <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option1")">Voy SIN acompañante</MudRadio>
-                    <MudRadio Class="quicksandBold align-center justify-center mud-width-full" Option="@("Option2")">Voy CON acompañante</MudRadio>
-                </MudRadioGroup>
-            </AnimateOnScroll>
-
-            <MudItem xs="12">
-                <MudContainer Class="mt-8 flex-column align-center justify-center mud-width-full">
-                    <div class="container">
-                        <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(0.5)">
-                            <div class="vertical-line"></div>
-                        </AnimateOnScroll>
-                    </div>
-                </MudContainer>
-            </MudItem>
-
-            <MudItem xs="12">
-                <MudContainer Class="mt-4 container text-overlay flex-column align-center justify-center mud-width-full">
-                    <img src="/images/rama3.svg" alt="Vector Image" class="rama7">
-                    <img src="/images/rama3.svg" alt="Vector Image" class="rama7 rama8">
-                </MudContainer>
-            </MudItem>
-
-            @if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option1")
-            {
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <MudText Class="mt-6 hellovalentica" Color="Color.Primary" Align="Align.Center" Typo="Typo.h3">tus datos</MudText>
-                </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <FormAsistencia Id="tusDatosForm"></FormAsistencia>
-                </AnimateOnScroll>
-            }
-            else if (IsAttendanceConfirmed && SelectedOptionAcompañante == "Option2")
-            {
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">tus datos</MudText>
-                </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <FormAsistencia Id="tusDatosForm"></FormAsistencia>
-                </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <MudText Class="mt-6 quicksandBold" Color="Color.Primary" Align="Align.Center" Typo="Typo.h5">datos acompañante</MudText>
-                </AnimateOnScroll>
-                <AnimateOnScroll Animation="Animations.SlideInUp" AnimationDuration="TimeSpan.FromSeconds(1)" AnimationDelay="TimeSpan.FromSeconds(1)">
-                    <FormAsistencia Id="tusDatosForm"></FormAsistencia>
-                </AnimateOnScroll>
-            }
-
-
-        </MudItem>
-    }
 </MudGrid>
+
+<FormAsistencia2></FormAsistencia2>
 
 
 <style>
@@ -231,7 +305,6 @@
     .longline {
         height: 300px;
     }
-
     .container {
         position: relative;
         /* Add other styles for your content container if needed */
@@ -245,7 +318,7 @@
         width: 60px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                    /* Add other styles for your image if needed */
+            /* Add other styles for your image if needed */
         margin-top: -30px;
         z-index: 2;
         opacity: 0.7;
@@ -259,7 +332,7 @@
         width: 80px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                        /* Add other styles for your image if needed */
+                /* Add other styles for your image if needed */
         margin-top: -70px;
         z-index: 2;
         transform: scaleX(-1);
@@ -274,7 +347,7 @@
         width: 270px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                        /* Add other styles for your image if needed */
+                /* Add other styles for your image if needed */
         margin-top: -50px;
         z-index: 2;
         opacity: 0.7;
@@ -288,7 +361,7 @@
         width: 270px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                            /* Add other styles for your image if needed */
+                    /* Add other styles for your image if needed */
         margin-top: -70px;
         z-index: 2;
         opacity: 0.7;
@@ -302,7 +375,7 @@
         width: 350px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                            /* Add other styles for your image if needed */
+                    /* Add other styles for your image if needed */
         margin-top: -60px;
         z-index: 2;
         opacity: 0.7;
@@ -312,10 +385,10 @@
         position: absolute;
         top: 0; /* Adjust this value to control the distance from the top */
         left: -5%;
-        height: 350px;
+        height: 350px; 
         width: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                                /* Add other styles for your image if needed */
+                        /* Add other styles for your image if needed */
         margin-top: -170px;
         z-index: 2;
         opacity: 0.7;
@@ -328,7 +401,7 @@
         height: 350px;
         width: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                                    /* Add other styles for your image if needed */
+                            /* Add other styles for your image if needed */
         margin-top: 0px;
         z-index: 2;
         transform: scaleX(-1);
@@ -343,12 +416,12 @@
     .rama7 {
         position: absolute;
         top: 0; /* Adjust this value to control the distance from the top */
-        right: -20%;
+        right: -20%; 
         /* You can also use right: 0; for sticking to the right side */
         width: 250px; /* Adjust the width as needed */
         height: auto; /* Maintain the aspect ratio */
         /* You can also use max-width or max-height to set limits *
-                            /* Add other styles for your image if needed */
+                    /* Add other styles for your image if needed */
         margin-top: -150px;
         z-index: 2;
         opacity: 0.7;
@@ -362,7 +435,7 @@
     .bacalisties {
         font-size: 3.5rem;
         font-weight: 200;
-        color: var(--primary-color);
+        color: var(--primary-color); 
         margin-bottom: 1vh;
         margin-top: 1vh;
     }
@@ -409,8 +482,6 @@
     public bool IsAttendanceConfirmed { get; set; } = false;
     public string SelectedOptionAcompañante { get; set; }
 
-    [Parameter] public bool IsStartScrollWanted { get; set; } = false;
-
     MudDatePicker _picker;
     DateTime? date;
     DateTime weddingDate = new System.DateTime(2024, 04, 20);
@@ -418,37 +489,30 @@
     private void ConfirmAttendance()
     {
         IsAttendanceConfirmed = true;
-
     }
 
+    private string welcomeMessage;
+    private string unionNombres;
+    private string fechaBoda;
     private string genial;
 
-
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         // Get the user's preferred language from the browser
         var userLanguage = System.Globalization.CultureInfo.CurrentCulture.Name;
 
+        // Set the welcome message based on the user's language
+        welcomeMessage = userLanguage.StartsWith("es") ? "¡Nos casamos!" : "¡Nos vamos a casar!";
+        unionNombres = userLanguage.StartsWith("es") ? "y" : "y";
+        fechaBoda = userLanguage.StartsWith("es") ? "20 Abril 2024" : "20 April 2024";
         genial = userLanguage.StartsWith("es") ? "¡Genial!" : "Great!";
-
-
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender && IsStartScrollWanted)
-        {
-            await ScrollToElement("confirmationButton", 2000);
-        }
-
         if (!firstRender && IsAttendanceConfirmed)
         {
-            await ScrollToElement("danosDatos", 2000);
-        }
-
-        if (!firstRender && SelectedOptionAcompañante != null)
-        {
-            await ScrollToElement("tusDatosForm", 2000);
+            ScrollToBottom();
 
         }
     }
@@ -462,12 +526,6 @@
     {
         await JSRuntime.ScrollByPixels();
     }
-
-    private async Task ScrollToElement(string elementToScrollId, int scrollDuration)
-    {
-        await JSRuntime.InvokeVoidAsync("scrollToElement", elementToScrollId, scrollDuration);
-    }
-
-
 }
+
 

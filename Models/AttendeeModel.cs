@@ -1,4 +1,4 @@
-﻿namespace Boda_BlazorWASM_PowerAutomate.Models
+﻿namespace teseractal_web.Models
 {
     public class AttendeeModel
     {

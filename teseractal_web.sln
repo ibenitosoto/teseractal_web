@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boda_BlazorWASM_PowerAutomate", "Boda_BlazorWASM_PowerAutomate.csproj", "{97BEB321-63E7-45D9-A173-D83E62C9C865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "teseractal_web", "teseractal_web.csproj", "{97BEB321-63E7-45D9-A173-D83E62C9C865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Boda_BlazorWASM_PowerAutomate;
+using teseractal_web;
 using MudBlazor.Services;
-using Boda_BlazorWASM_PowerAutomate.Components;
+using teseractal_web.Components;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
