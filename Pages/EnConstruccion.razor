@@ -1,0 +1,44 @@
+﻿@page "/enconstruccion"
+@inject IJSRuntime JSRuntime
+
+<link rel="stylesheet" href="./css/custom-fonts.css" />
+
+
+@using teseractal_web.Components;
+@using teseractal_web.Models;
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>teseractal</PageTitle>
+
+
+@* <MudImage Src="images/logoTeseractal.jpg" Elevation="25" Class="rounded-lg ma-4 foto" />
+ *@
+
+<MudGrid>
+    <MudItem Class="fullHeightContainer" xs="12">
+        <div class="textsLogo">
+            <MudText Class="quicksandBold" Color="Color.Primary" Typo="Typo.h3">página en construcción</MudText>
+            <MudText Class="mt-4 quicksandBook" Color="Color.Primary" Typo="Typo.h5">disculpa las molestias</MudText>
+        </div>
+    </MudItem>
+
+
+</MudGrid>
+
+<style>
+
+    .fullHeightContainer {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .textsLogo {
+        text-align: center;
+        margin: 4em;
+    }
+
+</style>
+
+
