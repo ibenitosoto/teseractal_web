@@ -5,13 +5,13 @@
         </CardHeaderAvatar>
         <CardHeaderContent>
             <MudText Typo="Typo.body1">@Title</MudText>
-            <MudText Typo="Typo.body2">@Subtitle</MudText>
+            <MudText Typo="Typo.body2">Cliente: @Subtitle</MudText>
         </CardHeaderContent>
         <CardHeaderActions>
 @*             <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
  *@        </CardHeaderActions>
     </MudCardHeader>
-    <MudCardMedia Image="images/pilars.jpg" Height="250" />
+    <MudCardMedia Image=@Image Height="250" />
     <MudCardContent>
         <MudText Typo="Typo.body2">@Description</MudText>
     </MudCardContent>
@@ -28,6 +28,8 @@
     [Parameter] public string? Title { get; set; }
 
     [Parameter] public string? Subtitle { get; set; }
+
+    [Parameter] public string? Image { get; set; }
 
     [Parameter] public string? Description { get; set; }
 

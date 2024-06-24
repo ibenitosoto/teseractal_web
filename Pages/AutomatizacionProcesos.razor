@@ -1,0 +1,21 @@
+﻿@page "/automatizacionprocesos"
+
+<link rel="stylesheet" href="./css/custom-fonts.css" />
+
+@using teseractal_web.Components;
+@using teseractal_web.Models;
+@using System.ComponentModel.DataAnnotations
+
+<MudGrid Class="pa-8">
+    @for (int i = 0; i < 10; i++)
+    {
+        <MudItem xs="12" sm="6" md="3">
+            <Card1></Card1>
+        </MudItem>
+    }
+</MudGrid>
+
+@code {
+
+}
+
